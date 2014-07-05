@@ -9,3 +9,5 @@ hello_SOURCES = main.c
 hello_LDADD = libhello.la
 
 ACLOCAL_AMFLAGS = -I m4
+
+SUBDIRS = csrc
