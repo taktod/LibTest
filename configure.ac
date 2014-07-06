@@ -1,7 +1,7 @@
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 
-AC_PREREQ([2.69])
+AC_PREREQ([2.68])
 AC_INIT([libTest], [0.0.1], [poepoemix@hotmail.com])
 AC_CONFIG_SRCDIR([config.h.in])
 AC_CONFIG_HEADERS([config.h])
@@ -21,6 +21,12 @@ AM_PROG_LIBTOOL
 # Checks for libraries.
 
 # Checks for header files.
+AX_JNI_INCLUDE_DIR
+for JNI_INCLUDE_DIR in $JNI_INCLUDE_DIRS
+  do
+    CFLAGS="$CFLAGS -I$JNI_INCLUDE_DIR"
+    CPPFLAGS="$CPPFLAGS -I$JNI_INCLUDE_DIR"
+done
 
 # Checks for typedefs, structures, and compiler characteristics.
 
